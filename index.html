@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script src="js/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1"/>
+        <title>DReCo.NET-  Home</title>
+        <link href="styles/style.css" rel=stylesheet type="text/css" >
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script src="js/index.js" type="text/javascript"></script>
+
+        
+
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <a href="index.html"><img src="image/title3.png" alt="dd" width=250px ></a>
+                <!--導覽列 -->
+                <nav>
+                    <ul>
+                        <li><a class="label" href="method.html"><b>Search</b></a></li>
+                        <li><a class="label" href="download.html"><b>Home</b></a></li>
+                        <li><a class="label" href="tutorial.html"><b>Help</b></a></li>
+                        <li><a class="label" href="about_us.html"><b>Contact us</b></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- <div style="clear: both;" ></div> -->
+        </div>
+        <div class="content">
+                <form id="query_value" name="query_value" action="getinput.php" method="post" >
+                    <div class="query_table_1">
+                        <div class="from_label" >
+                            <label for="choose_enter" >Do you wish to query the protein set as:</label> 
+                        </div>
+                        <div class="queryset_drug"  style="background-color: #c4c4c4; ">
+                            <div>
+                                <input id="query_Drug"  type="radio" name="query_type" value="Drug" Checked><b style="font-size: 20px;"> Drug related genes</b> ,and search for:
+                            </div>
+                            <div id="query_Drug_detail_display"  style="margin: 0px 25px;" >
+                                <lu class="hehe">
+                                    <li>Drug-drug-disease combination triangle</li>
+                                    <li>Drug-disease-disease repurposing triangle</li>
+                                    <li>Similar Drugs</li>
+                                    <li>Related disease</li>
+<!--
+                                    <li><input   type="radio" name="detail_type" value="Drug_drug_disease_combination_triangle" Checked>Drug-drug-disease combination triangle</li>
+                                    <li><input   type="radio" name="detail_type" value="Drug_disease_disease_combination_triangle" >Drug-disease-disease repurposing triangle</li>
+                                    <li><input   type="radio" name="detail_type" value="Similar_Drugs" >Similar Drugs</li>
+                                    <li><input   type="radio" name="detail_type" value="Related_disease" >Related disease</li>
+-->
+                                </lu>
+<!--
+                                <lu>
+                                    <li>Similar Drugs</li>
+                                    <li>Related disease</li>
+                                    <li>Drug-drug-disease combination triangle</li>
+                                    <li>Drug-disease-disease combination triangle</li>
+                                </lu>
+-->
+                            </div>
+                        </div>                            
+                        <div class="queryset_disease"  style="background-color: #f5f5f5;">
+                            <div>
+                                <input id="query_Disease" type="radio" name="query_type" value="Disease" ><b style="font-size: 20px;">Disease related genes</b> ,and search for:
+                            </div>
+                            <div id="query_Disease_detail_display" style="margin: 0px 25px;" >
+                                <lu class="hehe">
+                                    <li>Disease-drug-drug combination triangle</li>
+                                    <li>Disease-disease-drug repurposing triangle</li>
+                                    <li>Similar Disease</li>
+                                    <li>Related Drugs</li>
+                                </lu>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="query_table_2">
+                        <div class="from_label" >
+                            <label for="Enter_proteins"  >Enter proteins as Uniprot AC/ Gene Symbol:</label>
+                        </div>
+                        <div style="margin: 20px;" >
+                            <div>
+                                <textarea name="Enter_proteins" id="protein_id" cols="50" rows="10" placeholder="Ex. BRCA1, BRCA2, CDH1, CD44, TOP1, ERBB2, P24941, Q63699"></textarea>
+                            </div>
+                            <div class="example" >
+                                <button type="button" id="example1">#example1</button>
+                                <button type="button" id="example2">#example2</button>
+                            </div>
+                        </div>
+                        <div style="margin: 30px 20px;" >
+                            <select name="netowork" id="netowork">
+                                <option value="" >Choose a Protein interaction network </option>
+                                <option value="STRING_combine900" >STRING human PPI set</option>
+                                <option value="BioGRID_Reviewed" >BioGRID human PPI set</option>
+                                <option value="IntAct_Reviewed" >IntAct human PPI set</option>
+                                <option value="HuRI_set_Reviewed">HuRI set (Nature 2020)</option>
+                                <option value="HI-union_set_Reviewed" >HI-union set (Nature 2020)</option>
+                            </select>
+                            <select name="p_value" id="p_value">
+                                <option value="" >Choose a threshold for z-score </option>
+                                <option value="0.05" >0.05</option>
+                                <option value="0.01" >0.01</option>
+                                <option value="0.005" >0.005</option>
+                                <option value="0.001" >0.001</option>
+                            </select> 
+                            <input type="submit" id="table_submit" name="table_submit" value="Submit" style="float:right;">
+                        </div>
+                    </div>
+                </form>
+        </div>
+
+        <div class="footer" align="center" >
+            Copyright © 2020 SysMed.net Lab.<br>
+            Institute of Bioinformatics<br>
+            National Chiao-Tung University<br>
+            Hsinchu, Taiwan, R.O.C.<br>
+            All rights reserved.
+        </div>
+        
+<!--        <script src="js/index.js" type="text/javascript"></script>-->
+    </body>
+</html>
